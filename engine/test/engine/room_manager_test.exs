@@ -1,4 +1,7 @@
 defmodule RoomManagerTest do
+  alias Engine.Room
+  alias Engine.RoomManager
+
   use ExUnit.Case
   doctest RoomManager
 

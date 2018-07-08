@@ -1,4 +1,5 @@
-defmodule Room do
+defmodule Engine.Room do
+  alias Engine.Room
 @moduledoc """
 Representation of the room entity
 """

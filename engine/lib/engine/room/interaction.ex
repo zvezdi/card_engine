@@ -1,7 +1,7 @@
-defmodule Room.Interaction do
+defmodule Engine.Room.Interaction do
   use GenServer
 
-  def start_link(arg \\ nil) do
+  def start_link(arg \\ []) do
     GenServer.start_link(__MODULE__, arg)
   end
 
