@@ -7,11 +7,11 @@ defmodule Engine.RoomManager do
     GenServer.start_link(__MODULE__, arg)
   end
 
-  def register(pid, %{name: _name} = room) do
+  def register(pid \\ __MODULE__, %{name: _name} = room) do
     GenServer.call(pid, {:register, room})
   end
 
-  def list(pid) do
+  def list(pid \\ __MODULE__) do
     GenServer.call(pid, :list)
   end
 
