@@ -5,7 +5,7 @@ defmodule Ui.Router do
   plug(:dispatch)
 
   def start_link do
-    Plug.Adapters.Cowboy.http(Plugger.Router, [])
+    Plug.Adapters.Cowboy2.http(Ui.Router, [])
   end
 
   get "/" do
