@@ -1,8 +1,8 @@
 defmodule Ui.Router do
   use Plug.Router
 
-  plug :match
-  plug :dispatch
+  plug(:match)
+  plug(:dispatch)
 
   def start_link do
     Plug.Adapters.Cowboy.http(Plugger.Router, [])

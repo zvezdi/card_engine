@@ -8,11 +8,7 @@ defmodule Ui.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
-      { Plug.Adapters.Cowboy2,
-       scheme: :http,
-       plug: Ui.Router,
-       options: [port: 4000]
-      }
+      {Plug.Adapters.Cowboy2, scheme: :http, plug: Ui.Router, options: [port: 4000]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
