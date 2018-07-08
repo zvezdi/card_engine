@@ -6,8 +6,8 @@ defmodule Ui.WebSocketHandler do
   end
 
   def websocket_init(state) do
-    state = %{}
-    {:ok, state}
+    {:ok, session} = Session.start_link()
+    {:ok, %{session: session}}
   end
 
   def websocket_handle({:text, message}, state) do
