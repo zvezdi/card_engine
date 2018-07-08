@@ -8,4 +8,8 @@ Representation of the room entity
   def new(%{name: name, pid: pid}) do
     %Room{name: name, pid: pid}
   end
+
+  def info(%Room{name: name} = room) do
+    %{name: name}
+  end
 end

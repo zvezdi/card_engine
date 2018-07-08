@@ -4,7 +4,7 @@ defmodule Engine.RoomManager do
   use GenServer
 
   def start_link(arg \\ []) do
-    GenServer.start_link(__MODULE__, arg)
+    GenServer.start_link(__MODULE__, nil, arg)
   end
 
   def register(pid \\ __MODULE__, %{name: _name} = room) do
@@ -24,7 +24,7 @@ defmodule Engine.RoomManager do
   end
 
   @impl true
-  def handle_call(:list, _from, %{rooms: list} = state), do: {:reply, list, state}
+  def handle_call(:list, _from, %{rooms: list} = state), do: {:reply, Enum.map(list, &Room.info/1), state}
   def handle_call({:register, room}, _from, %{rooms: list} = state) do
     {:ok, pid} = Room.Interaction.start_link()
     new_room = Map.put(room, :pid, pid) |> Room.new

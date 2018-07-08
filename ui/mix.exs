@@ -14,7 +14,7 @@ defmodule Ui.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger, :cowboy, :plug, :engine],
+      extra_applications: [:logger, :cowboy, :plug, :poison, :engine],
       mod: {Ui.Application, []}
     ]
   end
@@ -24,6 +24,7 @@ defmodule Ui.MixProject do
     [
       {:cowboy, "~> 2.4.0"},
       {:plug, "~> 1.6.1"},
+      {:poison, "~> 3.1.0"},
       {:engine, in_umbrella: true}
     ]
   end
