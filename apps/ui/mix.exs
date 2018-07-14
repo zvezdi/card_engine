@@ -25,6 +25,7 @@ defmodule Ui.MixProject do
       {:cowboy, "~> 2.4.0"},
       {:plug, "~> 1.6.1"},
       {:plug_static_index_html, "~> 1.0.0"},
+      {:reverse_proxy, git: "https://github.com/DexterLB/elixir-reverse-proxy"},
       {:poison, "~> 3.1.0"},
       {:engine, in_umbrella: true}
     ]

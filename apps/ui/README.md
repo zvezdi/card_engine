@@ -33,3 +33,14 @@ rlwrap telsocket -url ws://localhost:4000/ws
 {"action": "register_room", "arguments": {"name": "Room 1"}}
 {"action": "list_rooms"}
 ```
+
+# Run with React web interface
+
+## Production (kind of)
+Build and serve static react app with plug
+From `apps/ui` run `mix yarn; iex -S mix`
+`mix yarn` is a task that builds the react app
+
+## Development
+Use reverse proxy to run the react app in development environment.
+From `apps/ui` run `iex -S mix` and from `apps/ui/web-interface` run `yarn run start`

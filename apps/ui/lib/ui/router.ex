@@ -1,9 +1,16 @@
 defmodule Ui.Router do
   use Plug.Router
 
-  # Replace "/" with "/index.html"
-  plug Plug.Static.IndexHtml, at: "/"
-  plug Plug.Static, at: "/", from: {:ui, "priv/static"}
+
+  if Mix.env == :dev do
+    forward "/", to: ReverseProxy, upstream: ["localhost:8000"]
+  else
+    # Replace "/" with "/index.html"
+    # use nginx for real production
+    plug Plug.Static.IndexHtml, at: "/"
+    plug Plug.Static, at: "/", from: {:ui, "priv/static"}
+  end
+
   plug(:match)
   plug(:dispatch)
 
