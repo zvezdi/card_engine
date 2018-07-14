@@ -24,6 +24,7 @@ defmodule Ui.MixProject do
     [
       {:cowboy, "~> 2.4.0"},
       {:plug, "~> 1.6.1"},
+      {:plug_static_index_html, "~> 1.0.0"},
       {:poison, "~> 3.1.0"},
       {:engine, in_umbrella: true}
     ]
